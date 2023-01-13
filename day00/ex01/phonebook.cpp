@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 00:12:48 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/01/11 00:13:14 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:13:55 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 int	main ()
 {
-	Contact contact;
-	contact.set_contact(0, "Margot", "Pourrey", "Gomar");
-	contact.print_contact();
+	Contact c0;
+	c0.set_contact("Margot", "Pourrey", "Gomar");
+	Contact c1;
+	c1.set_contact("Sirine", "Zenk", "Sissou");
+//	c1.print_contact();
 
-/* 	PhoneBook my_phonebook;
-	my_phonebook.set_contact(0, "Margot");
-	std::cout << my_phonebook.get_contact(0) << std::endl; */
+	PhoneBook phonebook;
+	phonebook.add_contact(0, c0);
+	phonebook.add_contact(1, c1);
+
+	phonebook.print_phonebook();
 
 }
