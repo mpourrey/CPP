@@ -6,7 +6,7 @@
 #    By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 00:09:44 by mpourrey          #+#    #+#              #
-#    Updated: 2023/01/11 00:20:55 by mpourrey         ###   ########.fr        #
+#    Updated: 2023/01/14 01:47:00 by mpourrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,10 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 DEL			= /bin/rm -rf
 OBJ_PATH	= ./obj
 
-SRC			= phonebook.cpp
+SRC			= main.cpp \
+			  phonebook.cpp \
+			  contact.cpp \
+			  utils.cpp
 
 OBJ			= $(addprefix $(OBJ_PATH)/, $(SRC:.cpp=.o))
 
