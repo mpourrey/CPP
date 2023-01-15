@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 00:55:17 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/01/14 02:03:08 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/01/14 17:12:09 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,34 @@ void		Contact::set_index(int index)
 
 int			Contact::get_contact_index()
 {
-	return(this->index);
+	return (this->index);
 }
 
 std::string	Contact::get_contact_first_name()
 {
-	return(this->first_name);
+	return (this->first_name);
 }
 
 std::string	Contact::get_contact_last_name()
 {
-	return(this->last_name);
+	return (this->last_name);
 }
 
 std::string	Contact::get_contact_nickname()
 {
-	return(this->nickname);
+	return (this->nickname);
 }
+
+std::string	Contact::get_contact_phone_number()
+{
+	return (this->phone_number);
+}
+
+std::string	Contact::get_contact_darkest_secret()
+{
+	return (this->darkest_secret);
+}
+
 
 void		Contact::print_contact_detail(std::string tmp)
 {

@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 01:44:28 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/01/14 02:06:36 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:38:57 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	PhoneBook::add_contact_to_phonebook(int index, Contact new_contact)
 	this->contacts[index] = new_contact;
 }
 
-void	PhoneBook::print_phonebook()
+void	PhoneBook::print_list_in_phonebook()
 {
 	for(int i = 0; i < 8; i++)
 	{
@@ -47,5 +47,18 @@ void	PhoneBook::print_contact_in_phonebook(int index)
 	std::cout << tmp << std::endl;
 	tmp = this->contacts[index].get_contact_nickname();
 	std::cout << tmp << std::endl;
-	
+	tmp = this->contacts[index].get_contact_phone_number();
+	std::cout << tmp << std::endl;
+	tmp = this->contacts[index].get_contact_darkest_secret();
+	std::cout << tmp << std::endl;
+}
+
+int		PhoneBook::is_empty_contact(int index)
+{
+	std::string	tmp;
+
+	tmp = this->contacts[index].get_contact_first_name();
+	if (tmp == " ")
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/11 00:09:44 by mpourrey          #+#    #+#              #
-#    Updated: 2023/01/14 01:47:00 by mpourrey         ###   ########.fr        #
+#    Updated: 2023/01/15 20:25:30 by mpourrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,19 +29,19 @@ $(OBJ_PATH) :
 	@mkdir -p $(OBJ_PATH)
 
 $(OBJ_PATH)/%.o : %.cpp | $(OBJ_PATH)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $@
+	@$(CC) $(CFLAGS) $(OBJ) -o $@
 
 clean :
-	$(DEL) $(OBJ)
-	$(DEL) $(OBJ_PATH)
+	@$(DEL) $(OBJ)
+	@$(DEL) $(OBJ_PATH)
 
 fclean : clean
-	$(DEL) $(NAME)
+	@$(DEL) $(NAME)
 
 re : fclean 
-	$(MAKE) all
+	@$(MAKE) all
 
 .PHONY = all clean fclean re

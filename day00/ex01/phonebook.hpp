@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 20:35:09 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/01/14 02:03:05 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/01/15 19:36:24 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 # include <iostream>
 # include <string>
+# include <cstring>
+# include <cstdlib>
 
 /* UTILS */
 void	print_white_spaces(int i);
-
+int		is_valid_index(std::string index);
 
 /* CLASSES */
 class Contact 
@@ -38,6 +40,8 @@ class Contact
 	std::string	get_contact_first_name();
 	std::string	get_contact_last_name();
 	std::string	get_contact_nickname();
+	std::string	get_contact_phone_number();
+	std::string	get_contact_darkest_secret();
 	void		print_contact();
 	void		print_contact_detail(std::string tmp);
 };
@@ -51,8 +55,9 @@ class PhoneBook
 	public:
 	void	init_phonebook();
 	void	add_contact_to_phonebook(int index, Contact new_contact);
-	void	print_phonebook();
+	void	print_list_in_phonebook();
 	void	print_contact_in_phonebook(int index);
+	int		is_empty_contact(int index);
 
 };
 
