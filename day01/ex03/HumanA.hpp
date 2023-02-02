@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 17:28:48 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/02 17:28:49 by mpourrey         ###   ########.fr       */
+/*   Created: 2023/02/02 22:37:50 by mpourrey          #+#    #+#             */
+/*   Updated: 2023/02/02 23:22:00 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_H
+# define HUMANA_H
 
-Zombie::~Zombie(void)
-{
-	std::cout << this->name 
-				<< " has been destroyed"
-				<< std::endl;
-}
+# include <iostream>
+# include "Weapon.hpp"
 
-Zombie::Zombie(std::string name)
+class HumanA
 {
-	this->name = name;
-}
+	private :
+	Weapon 		weapon;
+	std::string	name;
+	
+	public :
+	void	attack();
+	HumanA(std::string name, Weapon weapon);
+	~HumanA();
+};
 
-void	Zombie::announce(void)
-{
-	std::cout << this->name 
-				<< ": BraiiiiiiinnnzzzZ..."
-				<< std::endl;
-}
+#endif

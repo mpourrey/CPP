@@ -5,23 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 17:28:48 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/02 17:28:49 by mpourrey         ###   ########.fr       */
+/*   Created: 2023/02/02 17:28:40 by mpourrey          #+#    #+#             */
+/*   Updated: 2023/02/02 20:45:28 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::~Zombie(void)
+void	Zombie::set_name(std::string name)
 {
-	std::cout << this->name 
-				<< " has been destroyed"
-				<< std::endl;
-}
-
-Zombie::Zombie(std::string name)
-{
-	this->name = name;
+	this->name = name;	
 }
 
 void	Zombie::announce(void)
@@ -30,3 +23,12 @@ void	Zombie::announce(void)
 				<< ": BraiiiiiiinnnzzzZ..."
 				<< std::endl;
 }
+
+Zombie::~Zombie(void)
+{
+	std::cout << this->name 
+				<< " has been destroyed"
+				<< std::endl;
+}
+
+Zombie::Zombie() {}

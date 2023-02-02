@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/02/02 17:27:08 by mpourrey          #+#    #+#              #
-#    Updated: 2023/02/02 17:27:11 by mpourrey         ###   ########.fr        #
+#    Created: 2023/02/02 17:27:19 by mpourrey          #+#    #+#              #
+#    Updated: 2023/02/02 17:27:54 by mpourrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= zombie
+NAME		= zombiehorde
 CC 			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 DEL			= /bin/rm -rf
@@ -18,8 +18,7 @@ OBJ_PATH	= ./obj
 
 SRC			= main.cpp \
 			  Zombie.cpp \
-			  newZombie.cpp \
-			  randomChump.cpp
+			  zombieHorde.cpp
 
 OBJ			= $(addprefix $(OBJ_PATH)/, $(SRC:.cpp=.o))
 

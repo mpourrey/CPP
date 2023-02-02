@@ -6,15 +6,14 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:34:12 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/01/19 23:19:23 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:42:13 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
-//#include <chrono>
 #include <ctime>
-//#include <iomanip>
+#include <iomanip>
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
@@ -26,18 +25,16 @@ void	Account::_displayTimestamp(void)
 	time_t	timestamp = time(0); //number of sec
 	tm		*ltm = localtime(&timestamp);
 	
-	std::cout << '[';
-	std::cout << 1900 + ltm->tm_year;
-  	std::cout << 01 + ltm->tm_mon;
-   	std::cout << ltm->tm_mday;
-   	std::cout << "_";
-   	std::cout << ltm->tm_hour;
-   	std::cout << ltm->tm_min;
-   	std::cout << ltm->tm_sec;
-	std::cout << ']' << std::endl;
-/* 	auto timestamp = std::chrono::system_clock::now();
-	auto time = std::chrono::system_clock::to_time_t(timestamp);
-	 */
+	std::cout << std::setfill('0') 
+				<< '['
+				<< 1900 + ltm->tm_year
+  				<< std::setw(2) << 1 + ltm->tm_mon
+   				<< std::setw(2) << ltm->tm_mday
+   				<< "_"
+   				<< std::setw(2) << ltm->tm_hour
+   				<< std::setw(2) << ltm->tm_min
+   				<< std::setw(2) << ltm->tm_sec
+				<< ']' << std::endl;
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
