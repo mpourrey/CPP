@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:34:00 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/03 17:35:49 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:15:47 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,24 @@
 
 static int	replace_line(std::ofstream &new_file, std::string line, std::string s1, std::string s2)
 {
-	std::string		new_line;
+	std::string		new_line = "";
 	size_t			pos;
 	
+	//find(string a parcourir. premier caractere a parcourir), return emplacement du premier char trouve
 	pos = line.find(s1, 0);
-	while (pos != std::string::npos) //on a trouve s1
+	while (pos != std::string::npos)
 	{
-		std::cout << "line = " << line << std::endl;
 		//append(string a ajouter, position du premier caractere a copier, longueur de la nouvelle string)
 		new_line.append(line, 0, pos);
 		new_line.append(s2);
-		pos += s1.length();
-
 		new_file << new_line;
-		line = line.substr(pos);
-		
+		new_line = "";
+		pos += s1.length();	
+		line = line.substr(pos);	
 		pos = line.find(s1, 0);
-		std::cout << "pos = " << pos << std::endl ;
-
 	}
+	if (line.length() > 0)
+		new_file << line;
 	return (0);
 }
 
@@ -43,7 +42,9 @@ static int	replace_file(std::ifstream &file, std::string filename, std::string s
 	std::string		new_filename;
 	std::ofstream	new_file;
 	std::string		line;
+	bool			first_line;
 
+	first_line = 1;
 	new_filename = filename + ".replace";
 	new_file.open(new_filename.c_str());
 	if (!file.is_open())
@@ -55,6 +56,10 @@ static int	replace_file(std::ifstream &file, std::string filename, std::string s
 	{
 		while (std::getline(file, line))
 		{
+			if (!first_line)
+				new_file << std::endl;
+			else
+				first_line = 0;
 			std::ofstream 	&new_file_ref = new_file;
 			replace_line(new_file_ref, line, s1, s2);
 		}
