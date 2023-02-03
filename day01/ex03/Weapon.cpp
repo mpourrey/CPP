@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 22:59:23 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/02 23:23:17 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/03 13:27:01 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 	const std::string	&Weapon::getType()
 	{
 		std::string			&tmp = this->type;
-		const	std::string	&c_tmp = tmp; 
+		const std::string	&c_tmp = tmp; 
 		
 		return (c_tmp);
 	}
