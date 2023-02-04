@@ -5,21 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/11 00:09:44 by mpourrey          #+#    #+#              #
-#    Updated: 2023/02/04 20:10:06 by mpourrey         ###   ########.fr        #
+#    Created: 2023/02/03 18:18:50 by mpourrey          #+#    #+#              #
+#    Updated: 2023/02/04 16:31:00 by mpourrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= phonebook
+NAME		= HarlFilter
 CC 			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 DEL			= /bin/rm -rf
 OBJ_PATH	= ./obj
 
 SRC			= main.cpp \
-			  phonebook.cpp \
-			  contact.cpp \
-			  utils.cpp
+			  Harl.cpp
 
 OBJ			= $(addprefix $(OBJ_PATH)/, $(SRC:.cpp=.o))
 
@@ -29,19 +27,19 @@ $(OBJ_PATH) :
 	@mkdir -p $(OBJ_PATH)
 
 $(OBJ_PATH)/%.o : %.cpp | $(OBJ_PATH)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $@
+	@$(CC) $(CFLAGS) $(OBJ) -o $@
 
 clean :
-	$(DEL) $(OBJ)
+	@$(DEL) $(OBJ)
 	@$(DEL) $(OBJ_PATH)
 
 fclean : clean
-	$(DEL) $(NAME)
+	@$(DEL) $(NAME)
 
 re : fclean 
-	$(MAKE) all
+	@$(MAKE) all
 
 .PHONY = all clean fclean re

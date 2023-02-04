@@ -7,7 +7,6 @@
 //                                                                            //
 // ************************************************************************** //
 
-
 #pragma once
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
@@ -36,7 +35,6 @@ public:
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
 
-
 private:
 
 	//static = meme pour toutes les instances
@@ -53,7 +51,6 @@ private:
 	int				_nbWithdrawals;
 
 	Account( void );
-
 };
 
 

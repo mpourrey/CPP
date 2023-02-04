@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 22:30:49 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/01/05 14:26:17 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/04 20:08:10 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ void	print_upper_args(int argc, char **argv)
 
 	for (int i = 1; i < argc; i++)
 	{
-		std::string	str(argv[i]);
-		len = str.length();
-		for (int j = 0; j < len; j++)
+		for (int j = 0; argv[i][j]; j++)
 		{
-			upper_c = toupper(argv[i][j]);
+			upper_c = std::toupper(argv[i][j]);
 			std::cout << upper_c;
 		}
 	}

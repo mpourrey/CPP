@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:34:12 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/01/30 22:42:13 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/04 21:36:48 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,16 @@ void	Account::_displayTimestamp(void)
 				<< 1900 + ltm->tm_year
   				<< std::setw(2) << 1 + ltm->tm_mon
    				<< std::setw(2) << ltm->tm_mday
-   				<< "_"
+   				<< '_'
    				<< std::setw(2) << ltm->tm_hour
    				<< std::setw(2) << ltm->tm_min
    				<< std::setw(2) << ltm->tm_sec
-				<< ']' << std::endl;
+				<< "] ";
 }
 
 bool	Account::makeWithdrawal(int withdrawal)
 {
-	bool	autorisation;
-	
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";p_amount:" << this->_amount;
 	if (withdrawal <= this->_amount)
@@ -80,6 +79,7 @@ void	Account::makeDeposit(int deposit)
 
 void	Account::displayStatus( void ) const
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
 	std::cout << ";deposits:" << this->_nbDeposits;
@@ -89,6 +89,7 @@ void	Account::displayStatus( void ) const
 
 void	Account::displayAccountsInfos( void ) //ligne
 {	
+	Account::_displayTimestamp();
 	std::cout << "accounts:" << Account::_nbAccounts;
 	std::cout << ";total:" << Account::_totalAmount;
 	std::cout << ";deposits:" << Account::_totalNbDeposits;
@@ -103,6 +104,7 @@ int	Account::getNbAccounts(void)
 
 Account::Account(int initial_deposit) : _amount(initial_deposit) //constructeur
 {
+	Account::_displayTimestamp();
 	this->_accountIndex = Account::_nbAccounts;
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount << ";created" << std::endl;
@@ -112,6 +114,7 @@ Account::Account(int initial_deposit) : _amount(initial_deposit) //constructeur
 
 Account::~Account( void )
 {
+	Account::_displayTimestamp();
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount << ";closed" << std::endl;
 }
