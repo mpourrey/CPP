@@ -6,11 +6,13 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 00:12:48 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/04 20:19:07 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/05 19:02:05 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
+#include "contact.hpp"
+#include "utils.hpp"
 
 PhoneBook	handle_add_command(int index, PhoneBook phonebook)
 {
@@ -25,15 +27,20 @@ PhoneBook	handle_add_command(int index, PhoneBook phonebook)
 				<< "Please enter the contact details..." 
 				<< std::endl
 				<< "first name : ";
-	std::cin >> first_name;
+	if (!std::getline(std::cin, first_name))
+		exit(1);
 	std::cout << "last name : ";
-	std::cin >> last_name;
-	std::cout << "mickname : ";
-	std::cin >> nickname;
+	if (!std::getline(std::cin, last_name))
+		exit(1);
+	std::cout << "nickname : ";
+	if (!std::getline(std::cin, nickname))
+		exit(1);
 	std::cout << "phone number : ";
-	std::cin >> phone_number;
+	if (!std::getline(std::cin, phone_number))
+		exit(1);
 	std::cout << "darkest secret : ";
-	std::cin >> darkest_secret;
+	if (!std::getline(std::cin, darkest_secret))
+		exit(1);
 	new_contact.set_contact(first_name, last_name, nickname, phone_number, darkest_secret);
 	phonebook.add_contact_to_phonebook(index, new_contact);
 	std::cout << "                                 "
@@ -52,7 +59,8 @@ void	handle_search_command(PhoneBook phonebook)
 	std::cout << "                                 "
 				<< "Please enter an index..." 
 				<< std::endl;
-	std::cin >> index;
+	if (!std::getline(std::cin, index))
+		exit(1);
  	while (!is_valid_index(index))
 	{
 		
@@ -60,14 +68,15 @@ void	handle_search_command(PhoneBook phonebook)
 					<< "Please enter a valid index..." << std::endl;
 		std::cout << "index : ";
 		std::cin.ignore(index.length(), '\n');
-		std::cin >> index;
+		if (!std::getline(std::cin, index))
+			exit(1);
 	}
 	cindex = index.c_str();
-	i = atoi(cindex);
+	i = std::atoi(cindex);
 
 	if (phonebook.is_empty_contact(i))
 		std::cout << "                                 "
-					<< "Ccontact " << index << " empty !" << std::endl;
+					<< "Contact " << index << " empty !" << std::endl;
 	else
 	{
 		phonebook.print_contact_in_phonebook(i);
@@ -88,7 +97,8 @@ int	main ()
 	{
 		std::cout << "                                 "
 					<< "Please enter a command..." << std::endl;
-		std::cin >> line;
+		if (!std::getline(std::cin, line))
+			return(1);
 		if (strcmp(line.c_str(), "ADD") == 0)
 		{
 			phonebook = handle_add_command(index, phonebook);

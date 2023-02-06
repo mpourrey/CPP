@@ -6,11 +6,12 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 00:55:17 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/01/14 17:12:09 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/05 18:58:01 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp" 
+#include "utils.hpp"
 
 void		Contact::set_contact(std::string first_name, std::string last_name, std::string nickname, std::string phone_number, std::string darkest_secret) 
 {
@@ -70,8 +71,7 @@ void		Contact::print_contact_detail(std::string tmp)
 	}
 	else if (len <= 10)
 	{
-		print_white_spaces(10 - len);
-		std::cout << tmp;
+		std::cout << std::setw(10) << tmp;
 	}
 }
 
@@ -79,8 +79,7 @@ void		Contact::print_contact()
 {
 	std::string	tmp;
 	
-	print_white_spaces(9);
-	std::cout << this->get_contact_index() << '|';
+	std::cout << std::setw(9) << this->get_contact_index() << '|';
 	tmp = this->get_contact_first_name();
 	print_contact_detail(tmp);
 	std::cout << '|';

@@ -24,15 +24,15 @@ int		main( void ) {
 
 	/* tableau dynamique de Account */ 	//constructeur automatique [bloc 1]
 	int	const				amounts[]	= { 42, 54, 957, 432, 1234, 0, 754, 16576 };
-	size_t const			amounts_size( sizeof(amounts) / sizeof(int) ); // combien de veleurs dans tableau
+	size_t const			amounts_size( sizeof(amounts) / sizeof(int) ); // combien de valeurs dans tableau
 	//declare accounts = tab de Account avec la taille du tableau et les montants a set
 	accounts_t				accounts( amounts, amounts + amounts_size );
 	//deux iterateurs de la classe vector :
-	//begin retourne au debut du tableau / retourne le past-the-end du tableau
+	//begin retourne le debut du tableau / retourne le past-the-end du tableau
 	accounts_t::iterator	acc_begin	= accounts.begin();
 	accounts_t::iterator	acc_end		= accounts.end();
 
- 	/* tableau dynamique de int > depots */
+ 	/* tableau dynamique de int -> depots */
 	int	const			d[]			= { 5, 765, 564, 2, 87, 23, 9, 20 };
 	size_t const		d_size( sizeof(d) / sizeof(int) );
 	//decla deposits = tableau de int
@@ -40,7 +40,7 @@ int		main( void ) {
 	ints_t::iterator	dep_begin	= deposits.begin();
 	ints_t::iterator	dep_end		= deposits.end();
 
-	/* tableau dynamique de int > retrait */
+	/* tableau dynamique de int -> retrait */
 	int	const			w[]			= { 321, 34, 657, 4, 76, 275, 657, 7654 };
 	size_t const		w_size( sizeof(w) / sizeof(int) );
 	ints_t				withdrawals( w, w + w_size );
@@ -57,7 +57,6 @@ int		main( void ) {
 		  it.first != acc_end && it.second != dep_end;
 		  ++(it.first), ++(it.second) ) { 
 	//itere sur tableau de Account et tableau de deposits
-	//fonction makeDeposit a coder
 		(*(it.first)).makeDeposit( *(it.second) ); //[bloc 3]
 	}
 
