@@ -6,11 +6,11 @@
 #    By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 20:51:01 by mpourrey          #+#    #+#              #
-#    Updated: 2023/02/02 22:27:57 by mpourrey         ###   ########.fr        #
+#    Updated: 2023/02/06 17:10:40 by mpourrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= exe
+NAME		= attack
 CC 			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 DEL			= /bin/rm -rf
@@ -29,19 +29,19 @@ $(OBJ_PATH) :
 	@mkdir -p $(OBJ_PATH)
 
 $(OBJ_PATH)/%.o : %.cpp | $(OBJ_PATH)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME) : $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $@
+	$(CC) $(CFLAGS) $(OBJ) -o $@
 
 clean :
-	@$(DEL) $(OBJ)
+	$(DEL) $(OBJ)
 	@$(DEL) $(OBJ_PATH)
 
 fclean : clean
-	@$(DEL) $(NAME)
+	$(DEL) $(NAME)
 
 re : fclean 
-	@$(MAKE) all
+	$(MAKE) all
 
 .PHONY = all clean fclean re

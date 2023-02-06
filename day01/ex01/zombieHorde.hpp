@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   zombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/02 17:29:14 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/06 15:01:50 by mpourrey         ###   ########.fr       */
+/*   Created: 2023/02/06 14:40:43 by mpourrey          #+#    #+#             */
+/*   Updated: 2023/02/06 14:42:20 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
 
-Zombie	*zombieHorde(int N, std::string name)
-{
-	Zombie	*zombieTab; 
-	
-	zombieTab = new Zombie[N];
-	for (int i = 0; i < N; i++)
-		zombieTab[i].set_name(name);
-	return (zombieTab);
-}
+# include <string>
+# include "Zombie.hpp"
+
+Zombie	*zombieHorde(int N, std::string name);
+
+# endif

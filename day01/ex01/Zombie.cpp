@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:28:40 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/02 20:45:28 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:04:32 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	Zombie::set_name(std::string name)
 {
-	this->name = name;	
+	this->name = name;
+	std::cout << this->name 
+				<< " name has been set up"
+				<< std::endl;
 }
 
-void	Zombie::announce(void)
+void	Zombie::announce(void) const
 {
 	std::cout << this->name 
 				<< ": BraiiiiiiinnnzzzZ..."
@@ -31,4 +34,10 @@ Zombie::~Zombie(void)
 				<< std::endl;
 }
 
-Zombie::Zombie() {}
+Zombie::Zombie() 
+{
+	this->name = "Anonymous";
+	std::cout << this->name 
+				<< " is born"
+				<< std::endl;
+}

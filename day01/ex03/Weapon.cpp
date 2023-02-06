@@ -6,18 +6,15 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 22:59:23 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/03 13:27:01 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:11:15 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-	const std::string	&Weapon::getType()
-	{
-		std::string			&tmp = this->type;
-		const std::string	&c_tmp = tmp; 
-		
-		return (c_tmp);
+	const std::string	&Weapon::getType() const
+	{	
+		return (this->type);
 	}
 
 	void	Weapon::setType(std::string new_type)

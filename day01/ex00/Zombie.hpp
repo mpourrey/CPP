@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:28:59 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/02 17:29:02 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:03:00 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class Zombie
 	std::string	name;
 
 	public :
-	void	announce(void);
+	void	announce(void) const;
+	Zombie();
 	Zombie(std::string name);
 	~Zombie(void);
 };
