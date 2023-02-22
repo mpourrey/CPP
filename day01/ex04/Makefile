@@ -6,11 +6,11 @@
 #    By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/03 13:33:41 by mpourrey          #+#    #+#              #
-#    Updated: 2023/02/03 13:33:52 by mpourrey         ###   ########.fr        #
+#    Updated: 2023/02/20 15:15:24 by mpourrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= exe
+NAME		= sed
 CC 			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 DEL			= /bin/rm -rf

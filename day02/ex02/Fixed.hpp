@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:56:08 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/22 01:46:38 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:51:44 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ class	Fixed
 	bool	operator>=(const Fixed &other) const;
 	bool	operator<=(const Fixed &other) const;
 	bool	operator==(const Fixed &other) const;
+	bool	operator!=(const Fixed &other) const;
+
 
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);

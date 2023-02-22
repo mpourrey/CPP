@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:18:42 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/04 16:49:20 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:16:29 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ void	Harl::complain(std::string level)
 			break;
 		}
 		i++;
-		if (i == 4)
-			std::cout << "Please enter a valid level" << std::endl;
 	}
+	if (i == 4)
+		std::cout << "Please enter a valid level" << std::endl;
 }
 
 Harl::Harl() {}

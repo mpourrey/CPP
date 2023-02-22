@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   createZombie.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 18:18:45 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/20 19:12:05 by mpourrey         ###   ########.fr       */
+/*   Created: 2023/02/20 14:13:19 by mpourrey          #+#    #+#             */
+/*   Updated: 2023/02/20 14:26:02 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef CREATEZOMBIE_HPP
+# define CREATEZOMBIE_HPP
 
-int	main()
-{
-	Harl	harl;
+#include "Zombie.hpp"
 
-	harl.complain("");
-	std::cout << std::endl;
-	harl.complain("HJDY");
-	std::cout << std::endl;
-	harl.complain("DEBUG");
-	std::cout << std::endl;
-	harl.complain("INFO");
-	std::cout << std::endl;
-	harl.complain("WARNING");
-	std::cout << std::endl;
-	harl.complain("ERROR");
-	return (0);
-}
+Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
+
+#endif

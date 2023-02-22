@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 18:18:45 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/04 16:45:33 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:23:18 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(int argc, char **argv)
 		std::cout << "Please enter one argument" << std::endl;
 		return (1);
 	}
-
 	harl.complain(argv[1]);
 	return (0);
 }

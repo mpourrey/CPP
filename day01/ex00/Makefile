@@ -6,7 +6,7 @@
 #    By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 17:27:08 by mpourrey          #+#    #+#              #
-#    Updated: 2023/02/06 14:13:14 by mpourrey         ###   ########.fr        #
+#    Updated: 2023/02/20 14:44:29 by mpourrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ OBJ_PATH	= ./obj
 
 SRC			= main.cpp \
 			  Zombie.cpp \
-			  newZombie.cpp \
-			  randomChump.cpp
+			  randomChump.cpp \
+			  newZombie.cpp
 
 OBJ			= $(addprefix $(OBJ_PATH)/, $(SRC:.cpp=.o))
 

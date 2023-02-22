@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:05:03 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/22 01:40:47 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:53:52 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ Fixed::Fixed(const float floatingPoint)
 		std::cout << "Error: Fixed point overflow in constructor" << std::endl;
 		exit (1);
 	}
-	this->rawBits = roundf(floatingPoint * std::pow(2, this->nbBits));
+	this->rawBits = static_cast<int>(roundf(floatingPoint * std::pow(2, this->nbBits)));
 }    
 
 Fixed::~Fixed()
@@ -264,6 +264,13 @@ bool	Fixed::operator==(const Fixed &other) const
 	if (this->rawBits == other.rawBits)
 		return (1);
 	return (0);
+}
+
+bool	Fixed::operator!=(const Fixed &other) const
+{
+	if (this->rawBits == other.rawBits)
+		return (0);
+	return (1);
 }
 
 /* ---------------------------------------------------------------- INSERTION */

@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 20:51:33 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/03 13:29:26 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:51:02 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ int	main()
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
 
-	
-	
-
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:05:03 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/21 23:46:39 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:08:00 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ Fixed::Fixed(const Fixed &nb)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = nb;
-	//this->rawBits = nb.getRawBits();
 }
 
 Fixed::~Fixed()

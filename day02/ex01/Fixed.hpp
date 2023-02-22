@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 17:56:08 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/21 23:43:15 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:37:27 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
+////max pour decalage de 8 : 8388607
+////min pour decalage de 8 : -8388608
 
 class	Fixed
 {
@@ -41,6 +43,6 @@ class	Fixed
 
 };
 
-std::ostream	&operator<<(std::ostream &out, const Fixed &fixed const);
+std::ostream	&operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

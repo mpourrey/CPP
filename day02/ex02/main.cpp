@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:10:04 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/22 01:46:51 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:57:21 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	main()
 		std::cout << "++a = " << ++a << std::endl;
 		std::cout << "a = " << a << std::endl;
 		std::cout << "a++ = " << a++ << std::endl;
-		std::cout << "a = " << a << std::endl;
- 		
+		std::cout << "a = " << a << std::endl;	
 	}
 	{
 		std::cout << std::endl << "---------------------------------------------ARITHMETIQUE"
@@ -38,7 +37,6 @@ int	main()
 		std::cout << "5.05 / 2 = " << b << std::endl;
 		std::cout << "5.05 + 2 = " << c << std::endl;
 		std::cout << "5.05 - 2 = " << d << std::endl;
-
 	}
 	{
 		std::cout << std::endl << "----------------------------------------------COMPARAISON"
@@ -56,25 +54,23 @@ int	main()
 			std::cout << a << " >= " << c << std::endl;
 		if (a <= c)
 			std::cout << a << " <= " << c << std::endl; //pass
-		if (a == c)
-			std::cout << a << " == " << c << std::endl;
+		if (a != c)
+			std::cout << a << " != " << c << std::endl; //pass
 		if (c == d)
 			std::cout << c << " == " << d << std::endl; //pass
-	
 	}
 	{
 		std::cout << std::endl << "---------------------------------FCTS MEMBRES SURCHARGEES"
 			<< std::endl;
-		Fixed		a(1);
-		Fixed		b(2);
+		Fixed		a(1.1f);
+		Fixed		b(1.2f);
 		const Fixed	const_a(1);
 		const Fixed	const_b(2);
 		
 		std::cout << "min(" << a << "," << b << ") = " << Fixed::min( a, b ) << std::endl; 
-		std::cout << "min(" << const_a << "," << const_b << ") = " << Fixed::min( const_a, const_b ) << std::endl; 
 		std::cout << "max(" << a << "," << b << ") = " << Fixed::max( a, b ) << std::endl; 
+		std::cout << "min(" << const_a << "," << const_b << ") = " << Fixed::min( const_a, const_b ) << std::endl; 
 		std::cout << "max(" << const_a << "," << const_b << ") = " << Fixed::max( const_a, const_b ) << std::endl; 
-
 	}
 	return 0;
 }

@@ -6,11 +6,12 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 14:06:08 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/06 14:55:57 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:25:46 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include "createZombie.hpp"
 
 int	main()
 {

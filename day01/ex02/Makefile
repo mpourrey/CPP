@@ -6,11 +6,11 @@
 #    By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/02 20:51:01 by mpourrey          #+#    #+#              #
-#    Updated: 2023/02/06 15:06:26 by mpourrey         ###   ########.fr        #
+#    Updated: 2023/02/20 14:50:05 by mpourrey         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= cerveau
+NAME		= brain
 CC 			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++98
 DEL			= /bin/rm -rf

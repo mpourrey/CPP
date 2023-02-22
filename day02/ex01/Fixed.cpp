@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:05:03 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/21 23:43:12 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:46:04 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ Fixed::Fixed(const float floatingPoint) //convertit en virgule fixe
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
-
 }
 
 /* SURCHARGE OPERATEURS ----------------------------------------------------- */

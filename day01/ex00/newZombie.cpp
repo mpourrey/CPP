@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 14:06:14 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/06 14:06:15 by mpourrey         ###   ########.fr       */
+/*   Created: 2023/02/20 14:43:36 by mpourrey          #+#    #+#             */
+/*   Updated: 2023/02/20 14:43:50 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "createZombie.hpp"
 
 Zombie	*newZombie(std::string name)
 {

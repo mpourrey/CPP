@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:28:59 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/06 15:03:00 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/20 14:23:50 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <string>
 # include <iostream>
-
 
 class Zombie
 {
@@ -28,8 +27,5 @@ class Zombie
 	Zombie(std::string name);
 	~Zombie(void);
 };
-
-Zombie	*newZombie(std::string name);
-void	randomChump(std::string name);
 
 #endif
