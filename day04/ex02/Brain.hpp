@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 17:19:58 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/25 06:16:40 by mpourrey         ###   ########.fr       */
+/*   Created: 2023/02/24 04:58:58 by mpourrey          #+#    #+#             */
+/*   Updated: 2023/02/25 03:23:19 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include <string>
+# include <iostream>
 
-class	Dog : public Animal
+class	Brain
 {
 	private:
-	Brain *_brain;
 
-	public:
-	virtual void		makeSound() const;
-	virtual void		setBrainIdea(int i, std::string idea);
-	virtual std::string	getBrainIdea(int i) const;
+	std::string	_ideas[100];
 	
-	Dog();
-	Dog(const Dog &src);
-	virtual ~Dog();
+	public:
+	void		setIdea(int i, std::string idea);
+	std::string	getIdea(int i) const;
 
-	Dog	&operator=(const Dog &src);
-
+	
+	Brain();
+	Brain(const Brain &src);
+	virtual ~Brain();
+	
+	Brain	&operator=(const Brain &src);
 };
 
 #endif

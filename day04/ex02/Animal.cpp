@@ -6,33 +6,16 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:08:28 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/25 06:26:16 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/25 06:29:34 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 /* ------------------------------------------------------------- FCTS MEMBRES */
-std::string	Animal::getBrainIdea(int i) const
-{
-	(void)i;
-	return ("");
-}
-
-void		Animal::setBrainIdea(int i, std::string idea)
-{
-	(void)i;
-	(void)idea;
-}
-
 std::string	Animal::getType() const
 {
 	return (_type);
-}
-
-void		Animal::makeSound() const
-{
-	std::cout << "*unidentified sound*" << std::endl;
 }
 
 /* ------------------------------------------------------------ CONSTRUCTEURS */

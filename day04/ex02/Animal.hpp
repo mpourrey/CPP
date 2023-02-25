@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:08:48 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/25 06:25:25 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/25 06:29:20 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class	Animal
 	
 	public:
 	std::string			getType() const;
-	virtual void		makeSound() const;
-	virtual void		setBrainIdea(int i, std::string idea);
-	virtual std::string	getBrainIdea(int i) const;
+	virtual void		makeSound() const = 0;
+	virtual void		setBrainIdea(int i, std::string idea) = 0;
+	virtual std::string	getBrainIdea(int i) const = 0;
 
 	
 	Animal();

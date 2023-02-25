@@ -6,18 +6,12 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 17:34:39 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/25 03:18:24 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/25 06:41:58 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
-
-/* ------------------------------------------------------------- FCTS MEMBRES */
-void	Cat::setBrain(int i, std::string idea)
-{
-	_brain->setIdea(i, idea);
-}
 
 /* --------------------------------------------------- SURCHARGE FCTS MEMBRES */
 void	Cat::makeSound() const
