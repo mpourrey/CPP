@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:05:03 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/22 17:46:04 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:52:46 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,7 @@ Fixed::Fixed(const Fixed &nb)
 
 Fixed::Fixed(const int integer) //convertit en virgule fixe
 {
-	std::cout << "Int constructor called" << std::endl;
-	if (integer > INT_MAX / std::pow(2, this->nbBits) 
-		|| integer < INT_MIN / std::pow(2, this->nbBits))
-	{
-		std::cout << "Error: Fixed point overflow" << std::endl;
-		exit (1);
-	}
+z
 	this->rawBits = integer * std::pow(2, this->nbBits);
 }
 

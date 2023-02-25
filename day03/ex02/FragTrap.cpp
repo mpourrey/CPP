@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 05:18:57 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/02/23 05:31:06 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/02/24 01:20:38 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 {
-	std::cout << "ScavTrap Copy constructor called" << std::endl;
+	std::cout << "FragTrap Copy constructor called" << std::endl;
 	*this = src;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "ScavTrap Destructor called" << std::endl;
+	std::cout << "FragTrap Destructor called" << std::endl;
 }
