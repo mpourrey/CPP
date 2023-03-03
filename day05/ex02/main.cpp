@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 21:07:37 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/03/03 03:08:53 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/03/03 03:39:06 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,86 +97,48 @@ int	main()
 	std::cout << "------------------------------------------- FORMS CONSTRUCTOR"
 		<< std::endl;
 
-	{
-		std::cout << "* Instanciation success *" << std::endl;
-		try
-		{
-			Form a;
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+	std::cout << "* Instanciation success *" << std::endl;
+	ShrubberyCreationForm 	f1("garden");
+	std::cout << f1 << std::endl;
 
-		std::cout << std::endl;
-		std::cout << "* Instanciation error *" << std::endl;
-		try
-		{
-			Form b("Blablabla", 15, 158);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
-	}
-	
-	//beSigned change le statut du form en signe
+	RobotomyRequestForm 	f2("Grandma");
+	std::cout << f2 << std::endl;
+
+	PresidentialPardonForm	f3("Philippe");
+	std::cout << f3 << std::endl;
+
+
 	std::cout << std::endl;
-	std::cout << "--------------------------------------------- FORMS SIGNATURE"
+	std::cout << "------------------------------- FORMS SIGNATURE AND EXECUTION"
 		<< std::endl;
 	{
-		Form a("Blablabla", 15, 15);
-		std::cout << a << std::endl;
+		std::cout << "* Execution fail *" << std::endl;
+		Bureaucrat	b1("Jean", 1);
+		Bureaucrat b2("Louis", 148);
+		b2.executeForm(f1);
+		b1.signForm(f1);
+		b2.executeForm(f1);
+		std::cout << std::endl;
 		
-		std::cout << "* beSigned error *" << std::endl;
-		Bureaucrat	c("Mireille", 16);
-		try
-		{
-			a.beSigned(c);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		std::cout << a << std::endl;
+		std::cout << "* Execution success *" << std::endl;
+		b1.executeForm(f1);
+		std::cout << std::endl;
 		
-		std::cout << "* beSigned success *" << std::endl;
-		Bureaucrat	b("Jacques", 12);
-		try
-		{
-			a.beSigned(b);
-		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << '\n';
-		}
-		std::cout << a << std::endl;		
+	}
+	{
+		std::cout << "* Execution success *" << std::endl;
+		Bureaucrat	b1("Jean", 1);
+		b1.signForm(f2);
+		b1.executeForm(f2);
+		std::cout << std::endl;
+	}
+	{
+		std::cout << "* Execution success *" << std::endl;
+		Bureaucrat	b1("Jean", 1);
+		b1.signForm(f3);
+		b1.executeForm(f3);
+		std::cout << std::endl;
 	}
 	
-	//signForm ne change pas le statut du form
-	std::cout << std::endl;
-	std::cout << "--------------------------------------- BUREAUCRATS SIGNATURE"
-		<< std::endl;
-	{
-		std::cout << "* signForm grade error *" << std::endl;
-		Bureaucrat	a("Suzanne", 10);
-		Form		f("Tructruc", 8, 40);
-		a.signForm(f);
-		std::cout << f << std::endl;
-
-		std::cout << std::endl;
-		std::cout << "* signForm success *" << std::endl;
-		Bureaucrat	b("Raymond", 1);
-		std::cout << f << std::endl;
-		b.signForm(f);
-		std::cout << f << std::endl;
-
-
-		std::cout << std::endl;
-		std::cout << "* signForm double signature error *" << std::endl;
-		std::cout << f << std::endl;
-		b.signForm(f);
-
-	}
 	return (0);
 }

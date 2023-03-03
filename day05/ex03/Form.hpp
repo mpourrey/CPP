@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 03:09:59 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/03/02 19:02:11 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/03/03 05:14:08 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <iostream>
 # include <exception>
 
-class	Bureaucrat;
-# include "Bureaucrat.hpp"
+//forward declaration (+ inclure le .hpp dans fichier source)
+class	Bureaucrat; 
 
 class Form
 {
@@ -32,15 +32,15 @@ class Form
 	Form();
 	Form(std::string name, const int gradeToSign, const int gradeToExecute);
 	Form(const Form &src);
-	~Form();
+	virtual ~Form();
 	Form	&operator=(const Form &src);
 
-	std::string	getName() const;
-	bool		getIsSigned() const;
-	int			getGradeToSign() const;
-	int			getGradeToExecute() const;
-	void		beSigned(Bureaucrat bureaucrat);
-
+	virtual std::string	 	getName() const;
+	virtual bool			getIsSigned() const;
+	virtual int				getGradeToSign() const;
+	virtual int				getGradeToExecute() const;
+	virtual void 			beSigned(Bureaucrat bureaucrat) = 0;
+	virtual void 			execute(Bureaucrat const &executor) const = 0;
 	
 	class GradeTooHighException : public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 21:07:40 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/03/02 05:31:31 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:47:36 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <string>
 # include <iostream>
 # include <exception>
+
+class Form;
 # include "Form.hpp"
 
 class Bureaucrat
@@ -30,7 +32,7 @@ class Bureaucrat
 	void			setGrade(int grade);
 	void			upGrade();
 	void			downGrade();
-	void			signForm(Form form) const;
+	void			signForm(Form &form) const;
 
 	Bureaucrat();
 	Bureaucrat(std::string name, int grade);

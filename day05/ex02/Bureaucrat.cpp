@@ -6,7 +6,7 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 21:12:41 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/03/02 19:04:36 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/03/03 03:38:37 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,18 @@ void			Bureaucrat::signForm(Form &form) const
 	}
 }
 
+void			Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
 /* ------------------------------------------------------------ CONSTRUCTEURS */
 Bureaucrat::Bureaucrat() : _name("Anonymous"), _grade(150) {}
 
@@ -85,7 +97,7 @@ Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 {
-	std::cout << "Warning: Bureaucrat's name can't be modified" << std::endl;
+	std::cout << "Warning: Bureaucrat's name can't be modified." << std::endl;
 	_grade = src._grade;
 	return (*this);
 }
@@ -93,7 +105,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 /* ------------------------------------------------------ SURCHARGE OPERATEUR */
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &src)
 {
-	out << src.getName() << ", bureaucrat grade " << src.getGrade();
+	out << src.getName() << ", bureaucrat grade " << src.getGrade() << ".";
 	return (out); 
 }
 

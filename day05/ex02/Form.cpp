@@ -6,11 +6,12 @@
 /*   By: mpourrey <mpourrey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 03:10:01 by mpourrey          #+#    #+#             */
-/*   Updated: 2023/03/02 22:03:47 by mpourrey         ###   ########.fr       */
+/*   Updated: 2023/03/03 02:37:20 by mpourrey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 #include <cstdlib>
 
 /* ------------------------------------------------------------- FCTS MEMBRES */
@@ -34,30 +35,9 @@ int			Form::getGradeToExecute() const
 	return (_gradeToExecute);
 }
 
-void		Form::beSigned(Bureaucrat bureaucrat)
-{
-	if (!_isSigned && bureaucrat.getGrade() <= _gradeToSign)
-	{
-		std::cout << bureaucrat.getName() << " signed form " << _name << std::endl;
-		_isSigned = 1;
-	}
-	else if (_isSigned)
-	{
-		std::string	message = bureaucrat.getName() + " couldn't sign form "
-			+ _name + " because the form is already signed.";
-		throw GradeTooLowException(message);
-	}
-	else
-	{
-		std::string message = bureaucrat.getName() + " couldn't sign form "
-			+ _name +  " because his grade is too low";
-		throw GradeTooLowException(message);
-	}
-}
-
 /* ------------------------------------------------------------ CONSTRUCTEURS */
-Form::Form() : 
-	_name("Undefined"), _isSigned(0), _gradeToSign(1), _gradeToExecute(1) {}
+Form::Form() : 	_name("Undefined"), _isSigned(0), _gradeToSign(1), 
+				_gradeToExecute(1) {}
 
 
 /// attribut prive const doit etre set apres ':'
